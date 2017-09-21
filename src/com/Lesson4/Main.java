@@ -49,6 +49,6 @@ public class Main {
 //
 //        MySerializationAction.serializeJornal(jornal1);
 //        MySerializationAction.readJornal().printJornal();
-
+//
     }
 }

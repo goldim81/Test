@@ -79,7 +79,6 @@ public class MySerializationAction {
 
     static Jornal readJornal () {
         File file = new File("jornal.txt");
-        Jornal jornal = null;
         if (file.exists()) {
             try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
                 return (Jornal) ois.readObject();

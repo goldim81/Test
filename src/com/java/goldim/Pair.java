@@ -3,7 +3,6 @@ package com.java.goldim;
 public class Pair <T extends Number> {
     private T fild1;
     private T fild2;
-    //TODO что сделать если типа полей выходит за границы double
 
     public T getFild1() {
         return fild1;

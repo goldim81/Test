@@ -93,8 +93,10 @@ public class Student implements Serializable {
     }
 
     private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
-        if (age <= 60) {
-            stream.defaultReadObject();
-        }
+        stream.defaultReadObject();
+//        if (age <= 60) {
+//
+//
+//        }
     }
 }
