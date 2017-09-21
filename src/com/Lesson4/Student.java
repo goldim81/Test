@@ -1,20 +1,24 @@
 package com.Lesson4;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.util.*;
 
-public class Student implements Serializable{
+public class Student implements Serializable {
     private String firstName;
     private String secondName;
     private String familyName;
     private final long bdate;
+    private final int age;
     private short num;
 
-    public Student(String firstName, String secondName, String familyName, long bdate, short num) {
+    public Student(String firstName, String secondName, String familyName, long bdate, int age, short num) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.familyName = familyName;
         this.bdate = bdate;
+        this.age = age;
         this.num = num;
     }
 
@@ -70,5 +74,27 @@ public class Student implements Serializable{
 
     public void setNum(short num) {
         this.num = num;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                firstName + ' ' +
+                secondName + ' ' +
+                familyName + ", " +
+                ", Возвраст: " + age +
+                '}';
+    }
+
+    private void writeObject(ObjectOutputStream stream) throws IOException {
+        if (age >= 18) {
+            stream.defaultWriteObject();
+        }
+    }
+
+    private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
+        if (age <= 60) {
+            stream.defaultReadObject();
+        }
     }
 }

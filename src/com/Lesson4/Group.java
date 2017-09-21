@@ -38,6 +38,15 @@ public class Group implements Serializable {
         this.students = students;
     }
 
+    public void printGroup () {
+        System.out.println(this);
+        for (Student student: students) {
+            String fio = student.getFamilyName() + " " + student.getFirstName() + " " + student.getSecondName();
+            System.out.println(fio);
+        }
+        System.out.println("Всего учеников в группе: " + students.size());
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -54,5 +63,12 @@ public class Group implements Serializable {
         int result = groupNum;
         result = 31 * result + groupName.hashCode();
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Группа " +
+                "№" + groupNum +
+                ", " + groupName;
     }
 }

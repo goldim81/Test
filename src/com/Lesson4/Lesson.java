@@ -1,8 +1,8 @@
 package com.Lesson4;
 
-import java.util.Date;
+import java.io.Serializable;
 
-public class Lesson {
+public class Lesson implements Serializable{
     private final String topic;
     private final long dateTime;
     private final short roomNum;
@@ -51,5 +51,10 @@ public class Lesson {
         result = 31 * result + (int) getRoomNum();
         result = 31 * result + getTeacher().hashCode();
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Урок на тему: " + topic;
     }
 }
