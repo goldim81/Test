@@ -27,11 +27,11 @@ public class Main {
         groups.add(group02);
 
         //Проверка чтения и записи студентов
-//        MySerializationAction.serializeStudents(group01.getStudents());
-//        Set<Student> restoreStudents = MySerializationAction.readStudents();
-//        for (Student st:restoreStudents) {
-//            System.out.println(st);
-//        }
+        MySerializationAction.serializeStudents(group01.getStudents());
+        Set<Student> restoreStudents = MySerializationAction.readStudents();
+        for (Student st:restoreStudents) {
+            System.out.println(st);
+        }
 
 //        //Проверка записи и чтения групп
 //        MySerializationAction.serializeGroups(groups);
@@ -42,13 +42,13 @@ public class Main {
 //            }
 //        }else System.out.println("Ошибка восстановления списка групп");
 
-        //Проверка записи / Чтения журнала уроков
-        Lesson lesson01 = new Lesson("Тема1", Date.parse("2017/09/21"), (short)1, "Артем");
-
-        Jornal jornal1 = new Jornal(lesson01, group02.getStudents(), groups);
-
-        MySerializationAction.serializeJornal(jornal1);
-        MySerializationAction.readJornal().printJornal();
+//        //Проверка записи / Чтения журнала уроков
+//        Lesson lesson01 = new Lesson("Тема1", Date.parse("2017/09/21"), (short)1, "Артем");
+//
+//        Jornal jornal1 = new Jornal(lesson01, group02.getStudents(), groups);
+//
+//        MySerializationAction.serializeJornal(jornal1);
+//        MySerializationAction.readJornal().printJornal();
 //
     }
 }

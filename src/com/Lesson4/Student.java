@@ -86,17 +86,16 @@ public class Student implements Serializable {
                 '}';
     }
 
-//    private void writeObject(ObjectOutputStream stream) throws IOException {
-//        if (age >= 18) {
-//            stream.defaultWriteObject();
-//        }
-//    }
-//
-//    private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
-//        stream.defaultReadObject();
-////        if (age <= 60) {
-////
-////
-////        }
-//    }
+    private void writeObject(ObjectOutputStream stream) throws IOException {
+        if (age >= 18) {
+            stream.writeObject(this);
+        }
+    }
+
+    private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
+        stream.readObject();
+        if (age <= 60) {
+
+        }
+    }
 }
